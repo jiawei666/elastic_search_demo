@@ -1,0 +1,14 @@
+{
+    "name": "yuanjw/elastic_search_demo",
+    "description": "elasticsearch学习demo",
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jiawei666",
+            "email": "957089263@qq.com"
+        }
+    ]
+}
