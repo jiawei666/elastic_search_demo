@@ -10,5 +10,10 @@
             "name": "jiawei666",
             "email": "957089263@qq.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "": ""
+        }
+    }
 }
