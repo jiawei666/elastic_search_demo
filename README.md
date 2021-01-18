@@ -32,3 +32,8 @@
 - [kibana 官方文档](https://www.elastic.co/guide/en/kibana/current/introduction.html)
 - [logstash 官方文档](https://www.elastic.co/guide/en/logstash/7.10/introduction.html)
 - [环境搭建知道文章](https://towardsdatascience.com/how-to-synchronize-elasticsearch-with-mysql-ed32fc57b339)
+
+
+### 免责声明
+
+项目本人仅练手用，有bug也是正常的~
