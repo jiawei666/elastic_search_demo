@@ -1,7 +1,7 @@
 ## ElasticSearch Demo
 `Elastic Stack`学习demo，已写好`docker-compose.yml`，可直接部署
 
-### 什么是`Elastic Stack`？
+### 什么是Elastic Stack？
 图解：
 ![image](https://user-images.githubusercontent.com/24775116/104947180-518db380-59f6-11eb-9590-6e698d0f7bfe.png)
 
