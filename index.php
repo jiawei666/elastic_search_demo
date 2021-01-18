@@ -1,4 +1,8 @@
 <?php
+/**
+ * elasticsearch 服务接口测试
+ */
+
 require_once "vendor/autoload.php";
 
 use GuzzleHttp\Client;

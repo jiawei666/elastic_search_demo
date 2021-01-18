@@ -1,0 +1,69 @@
+version: "3"
+
+services:
+  elasticsearch: # es服务
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "discovery.type=single-node"
+    networks:
+      esnet:
+        ipv4_address: 172.23.0.2
+
+  kibana: # kibana
+    image: docker.elastic.co/kibana/kibana:7.10.2
+    container_name: kibana
+#    environment:
+#      - "ELASTICSEARCH_URL=http://172.23.0.1:9200"
+    ports:
+      - "5601:5601"
+    links:
+      - "elasticsearch:elasticsearch" # 容器名称映射
+    depends_on:
+      - elasticsearch
+    networks:
+      esnet:
+        ipv4_address: 172.23.0.3
+
+  mysql: # mysql数据库
+    image: mysql:5.7
+    container_name: mysql57-elisticsearch
+    ports:
+      - "3310:3306"
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci'
+    ]
+    environment:
+      MYSQL_DATABASE: "my_db"
+      MYSQL_ROOT_PASSWORD: "Root1234."
+    networks:
+      esnet:
+        ipv4_address: 172.23.0.4
+
+  logstash: # logstash（用于将mysql数据推送到es）
+    build:
+      context: .
+      dockerfile: Dockerfile-logstash
+    container_name: logstash
+    depends_on:
+      - mysql
+      - elasticsearch
+    volumes:
+      - ./logstash/pipeline/:/usr/share/logstash/pipeline/
+      - ./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+    networks:
+      esnet:
+        ipv4_address: 172.23.0.5
+
+networks:   #网络设置
+  esnet:
+    driver: bridge  #网桥模式
+    ipam:
+      config:
+        - subnet: 172.23.0.0/24   #子网
+          gateway: 172.23.0.1   #网关
+
