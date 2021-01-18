@@ -1,6 +1,18 @@
 ## ElasticSearch Demo
 `Elastic Stack`学习demo，已写好`docker-compose.yml`，可直接部署
 
+### 什么是`Elastic Stack`？
+图解：
+![image](https://user-images.githubusercontent.com/24775116/104947180-518db380-59f6-11eb-9590-6e698d0f7bfe.png)
+
+- `elasticsearch`：基于`json`的分布式搜索和分析引擎
+- `kibana`：`elasticsearch`数据可视化平台
+- `beats`：数据采集平台
+- `logstash`：数据收集管道
+
+### 项目各个服务的工作原理图解
+![image](https://user-images.githubusercontent.com/24775116/104947697-1b046880-59f7-11eb-8ac2-f266831cc80c.png)
+
 ### 依赖
 - docker 19.03+
 - docker-compose 1.27+
@@ -31,7 +43,7 @@
 - [elasticsearch 官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/6.0/getting-started.html)
 - [kibana 官方文档](https://www.elastic.co/guide/en/kibana/current/introduction.html)
 - [logstash 官方文档](https://www.elastic.co/guide/en/logstash/7.10/introduction.html)
-- [环境搭建知道文章](https://towardsdatascience.com/how-to-synchronize-elasticsearch-with-mysql-ed32fc57b339)
+- [环境搭建指导文章](https://towardsdatascience.com/how-to-synchronize-elasticsearch-with-mysql-ed32fc57b339)
 
 
 ### 免责声明
