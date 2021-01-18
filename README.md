@@ -10,7 +10,7 @@
 - `beats`：数据采集平台
 - `logstash`：数据收集管道
 
-### 项目各个服务的工作原理图解
+### 各个服务的工作原理图解
 ![image](https://user-images.githubusercontent.com/24775116/104947697-1b046880-59f7-11eb-8ac2-f266831cc80c.png)
 
 ### 依赖
